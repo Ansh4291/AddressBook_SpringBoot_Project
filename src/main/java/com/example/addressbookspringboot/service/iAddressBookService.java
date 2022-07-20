@@ -20,5 +20,9 @@ public interface iAddressBookService {
 
 
     List<AddressBook> findByState(String city);
+
+    List<AddressBook> sortByCityName();
+
+    List<AddressBook> sortByStateName();
 }
 

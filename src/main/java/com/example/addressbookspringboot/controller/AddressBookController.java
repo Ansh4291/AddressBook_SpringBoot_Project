@@ -68,5 +68,16 @@ public class AddressBookController {
         ResponseDTO respOTO= new ResponseDTO("Get Call For ID Successful", empDatalist);
         return new ResponseEntity<ResponseDTO>(respOTO, HttpStatus.OK);
     }
+    @GetMapping("/sortByCity")
+    public ResponseEntity<ResponseDTO> sortByCity(){
+        ResponseDTO responseDTO=new ResponseDTO("Sort By City Name",service.sortByCityName());
+        return new ResponseEntity<ResponseDTO>(responseDTO,HttpStatus.OK);
+    }
+
+    @GetMapping("/sortByState")
+    public ResponseEntity<ResponseDTO> sortByState(){
+        ResponseDTO responseDTO=new ResponseDTO("Sort By City Name",service.sortByStateName());
+        return new ResponseEntity<ResponseDTO>(responseDTO,HttpStatus.OK);
+    }
 
     }

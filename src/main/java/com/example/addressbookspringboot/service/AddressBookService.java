@@ -48,4 +48,13 @@ public class AddressBookService implements iAddressBookService {
     public List<AddressBook> findByState(String city){
         return addressBookRepository.findByState(city);
     }
+
+    @Override
+    public List<AddressBook> sortByCityName(){
+        return addressBookRepository.sortByCity();
+    }
+    @Override
+    public List<AddressBook> sortByStateName(){
+        return addressBookRepository.sortByState();
+    }
 }

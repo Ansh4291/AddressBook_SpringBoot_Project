@@ -1,6 +1,5 @@
 package com.example.addressbookspringboot.repository;
 
-
 import com.example.addressbookspringboot.model.AddressBook;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -17,4 +16,11 @@ public interface AddressBookRepository extends JpaRepository<AddressBook,Integer
 
     @Query(value = "select * from address_book where id=id and state = :state",nativeQuery = true)
     List<AddressBook> findByState(@Param("state") String state);
+
+    @Query(value = "select * from address_book order by city asc",nativeQuery = true)
+    List<AddressBook> sortByCity();
+
+    @Query(value = "select * from address_book order by state asc",nativeQuery = true)
+    List<AddressBook> sortByState();
+
 }
